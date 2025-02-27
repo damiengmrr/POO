@@ -1,12 +1,9 @@
-class Enrollment:
+class enrollment:
     def __init__(self, student, course):
         self.student = student
         self.course = course
+    def register(self):  # methode pour inscrire l'etudiant au cours
+        self.course.enroll_student(self.student)  # on appelle la methode du cours pour inscrire l'etudiant
 
-    def register(self):
-        #inscrit un etudiant a un cours
-        self.course.enroll_student(self.student)
-
-    def __str__(self):
-        #retourne une representation sous forme de texte
-        return f"{self.student.name} inscrit à {self.course.course_name}"
+    def __str__(self):  # methode pour afficher l'inscription sous forme de chaine
+        return f"{self.student.name} inscrit à {self.course.course_name}"  # renvoie le nom de l'etudiant et le nom du cours
